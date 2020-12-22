@@ -7,7 +7,7 @@ DL : 27/12/2020 à minuit.
 ----------------------------------------------------------
 Projet à rendre en deux parties :
 
-1. Version Minmax alpha beta, heuristique basique, etc...
+1. Version MinMax αβ, heuristique basique, etc...
 
 2. Version Deep Learning avec keras.
 ----------------------------------------------------------
