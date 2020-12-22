@@ -12,14 +12,24 @@ Projet à rendre en deux parties :
 2. Version Deep Learning avec keras.
 ----------------------------------------------------------
 
-Infos utiles :
 
-- Pour lancer une game de test, faut lancer ce fichier : starter-go.py
-
+----------------------------------------------------------
 A faire :
 
 1. Comprendre le code de base.
 2. Implémenter l'heuristique + MinMax αβ.
-   Coder les fonctions du fichier playerInterface.py
+   - Coder les fonctions du fichier playerInterface.py
+   - Implémenter myPlayer.py
 3. Ajouter le Deep Learning.
+4. Remplir la description ci-dessous au fur et à mesure selon les consignes données dans TP-note-Go.pdf
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+DESCRIPTION
+
+----------------------------------------------------------
+
+
+
 
