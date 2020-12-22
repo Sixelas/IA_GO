@@ -1,0 +1,12 @@
+1 Exploration d'arbres... sur feuilles
+
+
+1) Facteur de branchement : 2 environ.
+   Même hauteur : non pour voir à quel tour on se situe, certaines parties peuvent être plus longues que d'autres.
+
+2) Meilleur plateau ami : 8
+   Meilleur plateau ennemi : -4
+   Cela veut dire que dans ces cas là ami n'a qu'un coup possible. C'est plutôt mauvais car cela ne permet pas de choisir une variété dans les coups suivants qui pourrait augmenter nos chances de gagner plus loin dans la partie.
+
+
+
