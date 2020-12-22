@@ -2,6 +2,8 @@ import time
 import Goban
 from random import choice
 
+nb_turns = 0
+
 def randomMove(b):
     '''Renvoie un mouvement au hasard sur la liste des mouvements possibles. Pour avoir un choix au hasard, il faut
     construire explicitement tous les mouvements. Or, generate_legal_moves() peut nous donner un itérateur (quand on
@@ -12,10 +14,12 @@ def deroulementRandom(b):
     '''Déroulement d'une partie de go au hasard des coups possibles. Cela va donner presque exclusivement
     des parties très longues et sans gagnant. Cela illustre cependant comment on peut jouer avec la librairie
     très simplement.'''
+    global nb_turns
+    nb_turns = nb_turns+1
     print("----------")
     b.prettyPrint()
     if b.is_game_over():
-        print("Resultat : ", b.result())
+        print("Resultat : ", b.result(), " | Nombre de tours : ", nb_turns)
         return
     b.push(randomMove(b))
     deroulementRandom(b)
@@ -39,11 +43,13 @@ def weakDeroulementRandom(b):
     très simplement en utilisant les coups weak_legal_moves().
     
     Ce petit exemple montre comment utiliser weak_legal_moves() plutot que legal_moves(). Vous y gagnerez en efficacité.'''
-
+    global nb_turns
+    nb_turns = nb_turns+1
     print("----------")
+    print("Turn ", nb_turns)
     b.prettyPrint()
     if b.is_game_over():
-        print("Resultat : ", b.result())
+        print("Resultat : ", b.result(), " | Nombre de tours : ", nb_turns )
         return
 
     while True:
@@ -57,4 +63,10 @@ def weakDeroulementRandom(b):
     b.pop()
 
 board = Goban.Board()
-deroulementRandom(board)
+
+start = time.time()
+#deroulementRandom(board)
+weakDeroulementRandom(board)
+end = time.time()
+
+print("Durée de la partie : ",end-start, "s")

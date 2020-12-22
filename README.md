@@ -12,14 +12,15 @@ Projet à rendre en deux parties :
 2. Version Deep Learning avec keras.
 ----------------------------------------------------------
 
+- Faut installer gnugo il est pas dispo de base, sinon impossible de jouer vs gnugo
+sudo apt install gnugo
 
 ----------------------------------------------------------
 A faire :
 
 1. Comprendre le code de base.
 2. Implémenter l'heuristique + MinMax αβ.
-   - Coder les fonctions du fichier playerInterface.py
-   - Implémenter myPlayer.py
+   - Implémenter myPlayer.py en version MinMax αβ plutôt que le random actuel (save la version random dans un nouveau fichier randomPlayer.py)
 3. Ajouter le Deep Learning.
 4. Remplir la description ci-dessous au fur et à mesure selon les consignes données dans TP-note-Go.pdf
 ----------------------------------------------------------
