@@ -33,6 +33,8 @@ def minimax(self, board, profondeur, joueurMax):
     if joueurMax:#Black
         scoreBoard = -1000
         for i in moves:
+            if self._board.is_game_over():
+                return boardValue(self, board)
             self._board.push(i)
             testCoup = max(scoreBoard, minimax(self, board, profondeur-1, False))
             self._board.pop()
@@ -40,6 +42,8 @@ def minimax(self, board, profondeur, joueurMax):
     else:#White
         scoreBoard = 1000
         for i in moves:
+            if self._board.is_game_over():
+                return boardValue(self, board)
             self._board.push(i)
             testCoup = min(scoreBoard, minimax(self, board, profondeur-1, True))
             self._board.pop()
