@@ -138,7 +138,8 @@ class Board:
             for c in range(2):
                 self._positionHashes[x][c] = getProperRandom()
       self._currentHash = getProperRandom() 
-      self._passHash = getProperRandom() 
+      self._passHashB = getProperRandom() 
+      self._passHashW = getProperRandom() 
 
       self._seenHashes = set()
 
@@ -255,7 +256,7 @@ class Board:
                 self._gameOver = True
             else:
                 self._lastPlayerHasPassed = True
-            self._currentHash ^= self._passHash
+            self._currentHash ^= self._passHashB if self._nextPlayer == Board._BLACK else self._passHashW
 
         self._seenHashes.add(self._currentHash)
         self._historyMoveNames.append(self.flat_to_name(fcoord))
@@ -382,7 +383,7 @@ class Board:
     def _getStringOfStone(self, fcoord):
         # In the union find structure, it is important to route all the nodes to the root
         # when querying the node. But in Python, using the successive array is really costly
-        # so this is not so clear that we need to use the successive collection of nodes
+        #Â so this is not so clear that we need to use the successive collection of nodes
         # Moreover, not rerouting the nodes may help for backtracking on the structure 
         successives = []
         while self._stringUnionFind[fcoord] != -1:
@@ -459,7 +460,7 @@ class Board:
             if self._board[fn] == Board._EMPTY:
                 return False
             string = self._getStringOfStone(fn)
-            if self._board[fn] == color: # check that we don't kill the whole zone
+            if self._board[fn] == color: #Â check that we don't kill the whole zone
                 if string not in libertiesFriends:
                     libertiesFriends[string] = self._stringLiberties[string] - 1
                 else:
